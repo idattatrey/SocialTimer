@@ -12,3 +12,4 @@
 .externalNativeBuild
 .cxx
 /app/release/output-metadata.json
+/keystore/social_timer_key_store.jks
