@@ -44,7 +44,6 @@ import com.social.timer.R
 import com.social.timer.ui.composibles.AnimatedPreLoader
 import com.social.timer.ui.dialog.CustomProgressDialog
 import com.social.timer.viewmodel.SocialTimingViewModel
-import kotlin.time.Duration.Companion.minutes
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -187,10 +186,9 @@ fun TimingsScreen(mainPaddingValues: PaddingValues, viewModel: SocialTimingViewM
 }
 
 fun formatMinutes(totalMinutes: Int): String {
-    val duration = totalMinutes.minutes
 
-    val hours = duration.inWholeHours
-    val minutes = duration.minus(hours.minutes).inWholeMinutes
+    val hours = totalMinutes / 60
+    val minutes = totalMinutes % 60
 
     return "${hours}h ${minutes}m"
 }
